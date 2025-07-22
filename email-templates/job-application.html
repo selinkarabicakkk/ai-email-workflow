@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Application</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      p {
+        margin-bottom: 16px;
+      }
+      a {
+        color: #0366d6;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .signature {
+        margin-top: 20px;
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+      }
+      .signature p {
+        margin: 0;
+      }
+      .signature .title {
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>Dear {{company.contact_name || 'Hiring Manager'}},</p>
+
+      <p>
+        I hope this email finds you well. My name is {{user.name}}, and I
+        recently graduated with a degree in {{user.education}}. I am reaching
+        out to express my interest in potential {{job_position || 'software
+        development'}} opportunities at {{company.name}}.
+      </p>
+
+      <p>
+        I was particularly drawn to {{company.name}} because of
+        {{company_specific_reason || 'your innovative approach and commitment to
+        excellence in the tech industry'}}. I believe my skills in
+        {{user.skills}} align well with the work your team is doing.
+      </p>
+
+      <p>
+        During my studies and internships, I have gained experience in
+        {{user.experience}}. I am eager to bring my technical knowledge,
+        problem-solving abilities, and enthusiasm to contribute to your team's
+        success.
+      </p>
+
+      <p>
+        I have attached my CV for your consideration and would welcome the
+        opportunity to discuss how my background and skills could benefit
+        {{company.name}}. I am available for an interview at your convenience.
+      </p>
+
+      <p>
+        Thank you for considering my application. I look forward to the
+        possibility of working with your team.
+      </p>
+
+      <p>Best regards,</p>
+
+      <div class="signature">
+        <p>{{user.name}}</p>
+        <p class="title">{{user.title || 'Computer Engineering Graduate'}}</p>
+        <p>Phone: {{user.phone || 'Available upon request'}}</p>
+        <p>Email: {{user.email}}</p>
+        <p>LinkedIn: <a href="{{user.linkedin}}">{{user.linkedin}}</a></p>
+        <p>Github: <a href="{{user.portfolio}}">{{user.github}}</a></p>
+      </div>
+    </div>
+  </body>
+</html>
